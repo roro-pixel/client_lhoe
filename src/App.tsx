@@ -18,6 +18,7 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import ChangePassword from './pages/ChangePassword';
 import CheckIn from './components/CheckIn';
 import { ThemeProvider } from './context/ThemeContext';
+import MaintenanceBanner from './components/MaintenanceBanner';
 
 // Composant ScrollToTop 
 function ScrollToTop() {
@@ -112,6 +113,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Intégration du composant ScrollToTop */}
       <ScrollToTop />
+      <MaintenanceBanner />
       
       {!hideNavPaths.includes(location.pathname) && (
         <Navigation isLoggedIn={isLoggedIn} onLogout={handleLogout} />
@@ -166,7 +168,6 @@ function App() {
 
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
 
-      {/* Ajoutez ToastContainer ici */}
       <ToastContainer
         position="top-right" // Position du toast
         autoClose={2300} // Fermeture automatique après 5 secondes

@@ -132,13 +132,21 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Link
+              {/* <Link
                 to="/booking"
                 className="inline-flex items-center px-8 py-3 rounded-lg bg-gray-800 dark:bg-gray-700 text-white font-medium hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300 sm:text-sm"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Prendre Rendez-vous
-              </Link>
+              </Link> */}
+              <button
+              disabled
+                className="inline-flex items-center px-8 py-3 rounded-lg bg-gray-800 dark:bg-gray-700 text-white font-medium hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300 sm:text-sm opacity-60 cursor-not-allowed"
+                title="Service temporairement indisponible"
+              >
+                <Calendar className="w-5 h-5 mr-2" />
+                Prendre Rendez-vous
+              </button>
             </motion.div>
           </div>
           <div id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -202,13 +210,21 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Link
+              {/* <Link
                 to="/booking"
                 className="inline-flex items-center px-8 py-3 rounded-lg bg-gray-800 dark:bg-gray-700 text-white font-medium hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300 sm:text-sm"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Prendre Rendez-vous
-              </Link>
+              </Link> */}
+              <button
+              disabled
+                className="inline-flex items-center px-8 py-3 rounded-lg bg-gray-800 dark:bg-gray-700 text-white font-medium hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300 sm:text-sm opacity-60 cursor-not-allowed"
+                title="Service temporairement indisponible"
+              >
+                <Calendar className="w-5 h-5 mr-2" />
+                Prendre Rendez-vous
+              </button>
             </motion.div>
           </div>
           <div id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -280,14 +296,24 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <Link
+                {/* <Link
                   to="/booking"
-                  className={`inline-block px-6 py-3 md:px-8 md:py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors shadow-lg ${
+                  className={`inline-block px-6 py-3 md:px-8 md:py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors shadow-lg opacity-60 cursor-not-allowed ${
                     theme === 'dark' ? 'bg-gray-700 text-white' : 'bg-gray-800 text-white'
                   }`}
+                  title="Service temporairement indisponible"
                 >
                   Réserver Maintenant
-                </Link>
+                </Link> */}
+                <button
+                disabled
+                  className={`inline-block px-6 py-3 md:px-8 md:py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors shadow-lg opacity-60 cursor-not-allowed ${
+                    theme === 'dark' ? 'bg-gray-700 text-white' : 'bg-gray-800 text-white'
+                  }`}
+                  title="Service temporairement indisponible"
+                >
+                  Réserver Maintenant
+                </button>
               </motion.div>
             </div>
           </div>

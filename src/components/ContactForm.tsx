@@ -79,9 +79,10 @@ const ContactForm = () => {
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
     className={`w-full px-6 py-3 rounded-md flex items-center justify-center ${
-      theme === 'dark' ? 'bg-gray-800 text-white hover:bg-gray-700' : 'bg-gray-700 text-white hover:bg-gray-600'
+      theme === 'dark' ? 'bg-gray-800 text-white hover:bg-gray-700' : 'bg-gray-700 text-white hover:bg-gray-600 opacity-60 cursor-not-allowed'
     }`}
     disabled={true}
+    title="Service temporairement indisponible"
   >
     <Send className="mr-2 h-5 w-5" />
     Envoyer le message

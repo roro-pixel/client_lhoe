@@ -82,7 +82,11 @@ function BeautyServiceCard({ service, onClick, isThirdCard, setThirdCardElement 
           <p>Durée: {service.duration} min</p>
           <p>Prix: {service.price} XAF</p>
         </div>
-        <button className="mt-4 w-full bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-900 transition-colors">
+        <button 
+        disabled
+        className="mt-4 w-full bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-900 transition-colors opacity-60 cursor-not-allowed"
+        title="Service temporairement indisponible"
+        >
           Réserver
         </button>
       </div>
@@ -207,7 +211,7 @@ export default function BeautyServiceList() {
         const data = await response.json();
         setServices(data);
       } catch (err) {
-        setError("Une erreur s'est produite, veuillez réessayer plus tard!");
+        setError("Service momentanément indisponible. Veuillez réessayer plus tard.");
       } finally {
         setLoading(false);
       }
@@ -276,8 +280,17 @@ export default function BeautyServiceList() {
       </div>
     );
   }
-  if (error) return <div className="text-red-500 p-6">{error}</div>;
-
+if (error) {
+  return (
+    <div className={`flex justify-center items-center min-h-[calc(100vh-90px)] ${
+      theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'
+    }`}>
+      <p className="text-red-600 bg-red-100 border border-red-300 p-4 rounded-md text-center max-w-md">
+        {error}
+      </p>
+    </div>
+  );
+}
   return (
     <div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ${
       theme === 'dark' ? 'bg-gray-900' : 'bg-white'

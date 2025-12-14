@@ -121,7 +121,7 @@ export default function Navigation({ isLoggedIn, onLogout }: NavigationProps) {
 
             {/* Connexion/Déconnexion */}
             <div className="ml-8 flex items-center">
-              {isLoggedIn ? (
+              {/* {isLoggedIn ? (
                 <button
                   onClick={onLogout}
                   className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -137,7 +137,26 @@ export default function Navigation({ isLoggedIn, onLogout }: NavigationProps) {
                   <LogIn className="w-4 h-4 mr-2" />
                   Connexion
                 </NavLink>
-              )}
+              )} */}
+              {isLoggedIn ? (
+  <button
+    onClick={onLogout}
+    className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700"
+  >
+    <LogOut className="w-4 h-4 mr-2" />
+    Déconnexion
+  </button>
+) : (
+  <button
+    disabled
+    className="flex items-center px-4 py-2 text-sm font-medium text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-70"
+    title="Service temporairement indisponible"
+  >
+    <LogIn className="w-4 h-4 mr-2" />
+    Connexion
+  </button>
+)}
+
             </div>
           </div>
         </div>
@@ -184,10 +203,18 @@ export default function Navigation({ isLoggedIn, onLogout }: NavigationProps) {
                 </button>
               </>
             ) : (
-              <NavLink to="/login" className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700" onClick={toggleMenu}>
-                <LogIn className="w-4 h-4 mr-2" />
-                Connexion
-              </NavLink>
+              // <NavLink to="/login" className="flex items-center px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700" onClick={toggleMenu}>
+              //   <LogIn className="w-4 h-4 mr-2" />
+              //   Connexion
+              // </NavLink>
+              <button
+  disabled
+  className="flex items-center w-full text-left px-4 py-2 text-sm font-medium text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-70"
+  title="Service temporairement indisponible"
+>
+  <LogIn className="w-4 h-4 mr-2" />
+  Connexion
+</button>
             )}
           </div>
         )}
